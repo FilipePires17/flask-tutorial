@@ -1,0 +1,1 @@
+web: gunicorn diginet_crud.app:create_app()
