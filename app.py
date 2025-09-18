@@ -10,7 +10,6 @@ def create_app(test_config=None):
 
     app.config.from_object(Config)
 
-    CORS(app, origins="https://diginet.vercel.app/")
 
     try:
         os.makedirs(app.instance_path)
@@ -28,4 +27,5 @@ def create_app(test_config=None):
 
 if __name__ == "__main__":
     app = create_app()
+    CORS(app)
     app.run(debug=True)
