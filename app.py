@@ -3,11 +3,14 @@ from flask import Flask
 from extensions import db
 from blueprints.user.routes import user_bp
 from config import Config
+from flask_cors import CORS
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
 
     app.config.from_object(Config)
+
+    CORS(app, origins="https://diginet.vercel.app/")
 
     try:
         os.makedirs(app.instance_path)
