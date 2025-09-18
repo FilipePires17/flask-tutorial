@@ -1,7 +1,3 @@
-import os
-# Force development environment for this local test so CORS is enabled by
-# the create_app logic that allows '*' in development.
-os.environ.setdefault('FLASK_ENV', 'development')
 from app import create_app
 
 app = create_app()
